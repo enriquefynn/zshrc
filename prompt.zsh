@@ -68,18 +68,24 @@ function promptSetup () {
         # if not set, home is nowhere
         MYHOSTEXPRESSION="^$"
     fi
+
+	# append virtual env
+    if [[ $VIRTUAL_ENV != "" ]]; then
+        PR_SIGN+="(`echo $VIRTUAL_ENV | awk -F"/" '{print $5}'`) "
+    fi
+
     if [[ "`hostname`" =~ "$MYHOSTEXPRESSION" ]]; then
         # we are on our home desktop
     else
         # we are outside on a server
-        PR_SIGN+="`hostname` "
+        PR_SIGN+="`whoami` "
     fi
 
     # setup the main sign
     if [[ $CURRENT_USER == 'root' ]]; then
         PR_SIGN+="☠"
-    elif [[ $CURRENT_USER == 'vagrant' ]]; then
-        PR_SIGN+="𝓥"
+    elif [[ $CURRENT_USER == 'spider' ]]; then
+        PR_SIGN+="☢"
     else
         PR_SIGN+="∴"
     fi
