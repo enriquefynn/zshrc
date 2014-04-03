@@ -17,8 +17,8 @@ alias sign='gpg --detach-sign --armor'
 
 ##### standard aliases (start with a space to be ignored in history)
 # default ls is untouched, except coloring
-alias ls=' ls --color=auto'
-alias myls=' ls -C -F -h --color=always'
+alias ls=' ls -G'
+alias myls=' ls -C -F -h -G'
 alias l=" myls -l"
 alias ll=' myls -l'
 alias la=' myls -lA'
@@ -41,6 +41,9 @@ alias cd....='....'
 
 # alias to create a next-link in your home to tag the current workingdir
 alias linkthis='rm -f ~/next; ln -s $PWD ~/next'
+
+# alias to mplayer play better subtitles
+alias mplayer='mplayer -ass-font-scale 1.5 -ass'
 
 ##### global aliases
 # zsh buch s.82 (z.B. find / ... NE)
