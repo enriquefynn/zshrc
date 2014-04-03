@@ -71,7 +71,7 @@ function promptSetup () {
 
 	# append virtual env
     if [[ $VIRTUAL_ENV != "" ]]; then
-        PR_SIGN+="(`echo $VIRTUAL_ENV | awk -F"/" '{print $5}'`) "
+        PR_SIGN+="(`echo $VIRTUAL_ENV | awk -F"/" '{print $6}'`) "
     fi
 
     if [[ "`hostname`" =~ "$MYHOSTEXPRESSION" ]]; then
@@ -84,7 +84,7 @@ function promptSetup () {
     # setup the main sign
     if [[ $CURRENT_USER == 'root' ]]; then
         PR_SIGN+="☠"
-    elif [[ $CURRENT_USER == 'spider' ]]; then
+    elif [[ $CURRENT_USER == 'fynn' ]]; then
         PR_SIGN+="☢"
     else
         PR_SIGN+="∴"
