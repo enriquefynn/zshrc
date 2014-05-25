@@ -42,9 +42,6 @@ alias cd....='....'
 # alias to create a next-link in your home to tag the current workingdir
 alias linkthis='rm -f ~/next; ln -s $PWD ~/next'
 
-# alias to mplayer play better subtitles
-alias mplayer='mplayer -ass-font-scale 1.5 -ass'
-
 ##### global aliases
 # zsh buch s.82 (z.B. find / ... NE)
 alias -g NE='2>|/dev/null'
